@@ -11,8 +11,9 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import rows from "layouts/shipment/data/ShipmentItem";
-import columns from "layouts/shipment/data/Headers";
+// import ShipmentItem from "layouts/shipment/ShipmentItem";
+import rows from "./data/shipmentData.json";
+import columns from "layouts/shipment/Headers";
 
 function Tables() {
   return (
