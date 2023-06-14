@@ -119,7 +119,7 @@ export default function App() {
 
         <Routes>
           {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<Navigate to="/shipment" />} />
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -138,7 +138,7 @@ export default function App() {
       )}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="*" element={<Navigate to="/shipment" />} />
       </Routes>
     </ThemeProvider>
   );

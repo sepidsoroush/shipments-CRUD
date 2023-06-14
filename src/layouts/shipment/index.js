@@ -11,13 +11,10 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
-import projectsTableData from "layouts/tables/data/projectsTableData";
+import rows from "layouts/shipment/data/ShipmentItem";
+import columns from "layouts/shipment/data/Headers";
 
 function Tables() {
-  const { columns, rows } = authorsTableData();
-  const { columns: pColumns, rows: pRows } = projectsTableData();
-
   return (
     <DashboardLayout>
       <MDBox pt={6} pb={3}>
@@ -35,7 +32,7 @@ function Tables() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Authors Table
+                  Shipments Table
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>

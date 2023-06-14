@@ -1,14 +1,14 @@
-import Tables from "layouts/tables";
+import Tables from "layouts/shipment";
 
 import Icon from "@mui/material/Icon";
 
 const routes = [
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
+    name: "Shipment",
+    key: "shipment",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/tables",
+    route: "/shipment",
     component: <Tables />,
   },
 ];
