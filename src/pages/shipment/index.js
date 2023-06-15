@@ -10,11 +10,9 @@ import DashboardLayout from "components/UI/DashboardLayout";
 import TableColumns from "components/Shipment/TableColumns";
 import ShipmentDelete from "components/Shipment/ShipmentDelete";
 import ShipmentUpdate from "components/Shipment/ShipmentUpdate";
-import ShipmentModal from "components/Shipment/ShipmentModal";
 
 const Shipment = () => {
   const [selectedItem, setSelectedItem] = useState({});
-  const [openItemModal, setOpenItemModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
 
@@ -25,11 +23,6 @@ const Shipment = () => {
     dispatch(setDataAction());
   }, []);
 
-  const showItemHandler = (orderNo) => {
-    const clickedItem = rows.find((row) => row.orderNo === orderNo);
-    setSelectedItem(clickedItem);
-    setOpenItemModal(true);
-  };
   const deleteItemHandler = (orderNo) => {
     const clickedItem = rows.find((row) => row.orderNo === orderNo);
     setSelectedItem(clickedItem);
@@ -46,9 +39,6 @@ const Shipment = () => {
   };
   const closeUpdateModal = () => {
     setOpenUpdateModal(false);
-  };
-  const closeItemModal = () => {
-    setOpenItemModal(false);
   };
 
   return (
@@ -67,13 +57,7 @@ const Shipment = () => {
           shipment={selectedItem}
         />
       )}
-      {openItemModal && (
-        <ShipmentModal
-          onOpenModal={openItemModal}
-          onCloseModal={closeItemModal}
-          shipment={selectedItem}
-        />
-      )}
+
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
           <Grid item xs={12}>
@@ -94,8 +78,9 @@ const Shipment = () => {
               </MDBox>
               <MDBox pt={3}>
                 <DataGrid
+                  sx={{ fontSize: 13 }}
                   rows={rows}
-                  columns={TableColumns(showItemHandler, deleteItemHandler, updateItemHandler)}
+                  columns={TableColumns(deleteItemHandler, updateItemHandler)}
                   getRowId={(row) => row.orderNo}
                   pageSize={10}
                   rowsPerPageOptions={[5, 10, 25]}

@@ -1,57 +1,44 @@
-import Icon from "@mui/material/Icon";
 import MDTypography from "components/UI/MDTypography";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-const TableColumns = (showItemHandler, deleteItemHandler, updateItemHandler) => [
-  { field: "orderNo", headerName: "Order No", width: 250 },
+const TableColumns = (deleteItemHandler, updateItemHandler) => [
+  { field: "orderNo", headerName: "Order No", width: 220 },
   { field: "date", headerName: "Date", width: 100 },
-  { field: "customer", headerName: "Customer", width: 200 },
+  { field: "customer", headerName: "Customer", width: 230 },
   {
     field: "trackingNo",
     headerName: "Tracking no",
-    width: 250,
+    width: 220,
   },
   {
     field: "status",
     headerName: "Status",
-    type: "number",
     width: 100,
   },
   {
     field: "consignee",
     headerName: "Consignee",
-    width: 200,
+    width: 250,
   },
   {
     field: "action",
     headerName: "Actions",
+    width: 90,
     align: "center",
     renderCell: (params) => (
-      <div>
-        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          <Icon
-            style={{ minWidth: "20px", color: "red", margin: "0 5px" }}
-            onClick={() => deleteItemHandler(params.row.orderNo)}
-          >
-            delete
-          </Icon>
-        </MDTypography>
-        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          <Icon
-            style={{ minWidth: "20px", margin: "0 5px" }}
-            onClick={() => updateItemHandler(params.row.orderNo)}
-          >
-            edit
-          </Icon>
-        </MDTypography>
-        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          <Icon
-            style={{ minWidth: "20px", margin: "0 5px" }}
-            onClick={() => showItemHandler(params.row.orderNo)}
-          >
-            assignment
-          </Icon>
-        </MDTypography>
-      </div>
+      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        <DeleteIcon
+          fontSize="small"
+          sx={{ minWidth: "30px", color: "red", margin: "0 2px" }}
+          onClick={() => deleteItemHandler(params.row.orderNo)}
+        />
+        <EditIcon
+          fontSize="small"
+          sx={{ minWidth: "30px", color: "green", margin: "0 2px" }}
+          onClick={() => updateItemHandler(params.row.orderNo)}
+        />
+      </MDTypography>
     ),
   },
 ];
