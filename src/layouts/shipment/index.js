@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { setDataAction } from "store/shipment-actions";
 import ShipmentDelete from "./ShipmentDelete";
 import ShipmentUpdate from "./ShipmentUpdate";
+import ShipmentModal from "./ShipmentModal";
 
 function Tables() {
   const [selectedItem, setSelectedItem] = useState({});
@@ -39,11 +40,15 @@ function Tables() {
     setSelectedItem(clickedItem);
     setOpenUpdateModal(true);
   };
+
   const closeDeleteModal = () => {
     setOpenDeleteModal(false);
   };
   const closeUpdateModal = () => {
     setOpenUpdateModal(false);
+  };
+  const closeItemModal = () => {
+    setOpenItemModal(false);
   };
 
   return (
@@ -59,6 +64,13 @@ function Tables() {
         <ShipmentUpdate
           onOpenModal={openUpdateModal}
           onCloseModal={closeUpdateModal}
+          shipment={selectedItem}
+        />
+      )}
+      {openItemModal && (
+        <ShipmentModal
+          onOpenModal={openItemModal}
+          onCloseModal={closeItemModal}
           shipment={selectedItem}
         />
       )}
