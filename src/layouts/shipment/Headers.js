@@ -1,5 +1,5 @@
-import MDButton from "components/MDButton";
 import Icon from "@mui/material/Icon";
+import MDTypography from "components/MDTypography";
 
 const TableColumns = [
   { field: "orderNo", headerName: "Order No", width: 250 },
@@ -27,12 +27,15 @@ const TableColumns = [
     align: "center",
     renderCell: () => (
       <div>
-        <MDButton variant="text" color="error">
-          <Icon>delete</Icon>
-        </MDButton>
-        <MDButton variant="text" color="dark">
-          <Icon>edit</Icon>
-        </MDButton>
+        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <Icon style={{ minWidth: "20px", color: "red", margin: "0 5px" }}>delete</Icon>
+        </MDTypography>
+        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <Icon style={{ minWidth: "20px", margin: "0 5px" }}>edit</Icon>
+        </MDTypography>
+        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <Icon style={{ minWidth: "20px", margin: "0 5px" }}>assignment</Icon>
+        </MDTypography>
       </div>
     ),
   },

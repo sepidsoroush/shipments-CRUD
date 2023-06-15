@@ -240,12 +240,12 @@ export default styled(Button)(({ theme, ownerState }) => {
     }
 
     // padding value
-    let paddingValue = `${pxToRem(11)} ${pxToRem(11)} ${pxToRem(10)}`;
+    let paddingValue = `${pxToRem(5)} ${pxToRem(5)} ${pxToRem(5)}`;
 
     if (size === "small") {
-      paddingValue = pxToRem(4.5);
+      paddingValue = pxToRem(2);
     } else if (size === "large") {
-      paddingValue = pxToRem(16);
+      paddingValue = pxToRem(8);
     }
 
     return {
