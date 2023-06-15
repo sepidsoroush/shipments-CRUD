@@ -1,4 +1,4 @@
-import Tables from "layouts/shipment";
+import Shipment from "pages/shipment/index";
 
 const routes = [
   {
@@ -6,7 +6,7 @@ const routes = [
     name: "Shipment",
     key: "shipment",
     route: "/shipment",
-    component: <Tables />,
+    component: <Shipment />,
   },
 ];
 

@@ -1,18 +1,18 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setDataAction } from "store/shipment-actions";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { DataGrid } from "@mui/x-data-grid";
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import TableColumns from "layouts/shipment/TableColumns";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { setDataAction } from "store/shipment-actions";
-import ShipmentDelete from "./ShipmentDelete";
-import ShipmentUpdate from "./ShipmentUpdate";
-import ShipmentModal from "./ShipmentModal";
+import MDBox from "components/UI/MDBox";
+import MDTypography from "components/UI/MDTypography";
+import DashboardLayout from "components/UI/DashboardLayout";
+import TableColumns from "components/Shipment/TableColumns";
+import ShipmentDelete from "components/Shipment/ShipmentDelete";
+import ShipmentUpdate from "components/Shipment/ShipmentUpdate";
+import ShipmentModal from "components/Shipment/ShipmentModal";
 
-function Tables() {
+const Shipment = () => {
   const [selectedItem, setSelectedItem] = useState({});
   const [openItemModal, setOpenItemModal] = useState(false);
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
@@ -107,6 +107,6 @@ function Tables() {
       </MDBox>
     </DashboardLayout>
   );
-}
+};
 
-export default Tables;
+export default Shipment;

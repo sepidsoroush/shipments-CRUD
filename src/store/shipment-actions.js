@@ -1,5 +1,5 @@
 import { shipmentActions } from "./shipment-slice";
-import shipmentData from "../layouts/shipment/data/shipmentData.json";
+import shipmentData from "components/Shipment/data/shipmentData.json";
 
 export function setDataAction() {
   return (dispatch) => {

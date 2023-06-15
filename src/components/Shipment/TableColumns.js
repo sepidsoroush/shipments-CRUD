@@ -1,5 +1,5 @@
 import Icon from "@mui/material/Icon";
-import MDTypography from "components/MDTypography";
+import MDTypography from "components/UI/MDTypography";
 
 const TableColumns = (showItemHandler, deleteItemHandler, updateItemHandler) => [
   { field: "orderNo", headerName: "Order No", width: 250 },
