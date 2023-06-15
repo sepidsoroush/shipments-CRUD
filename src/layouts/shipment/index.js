@@ -8,10 +8,9 @@ import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DataTable from "examples/Tables/DataTable";
+import { DataGrid } from "@mui/x-data-grid";
 
 // Data
-// import ShipmentItem from "layouts/shipment/ShipmentItem";
 import rows from "./data/shipmentData.json";
 import columns from "layouts/shipment/Headers";
 
@@ -37,12 +36,12 @@ function Tables() {
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
-                <DataTable
-                  table={{ columns, rows }}
-                  isSorted={false}
-                  entriesPerPage={false}
-                  showTotalEntries={false}
-                  noEndBorder
+                <DataGrid
+                  rows={rows}
+                  columns={columns}
+                  getRowId={(row) => row.orderNo}
+                  pageSize={10}
+                  rowsPerPageOptions={[5, 10, 25]}
                 />
               </MDBox>
             </Card>
