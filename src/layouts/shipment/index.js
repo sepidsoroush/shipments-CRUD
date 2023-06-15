@@ -1,20 +1,22 @@
-// @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-
-// Material Dashboard 2 React components
+import { DataGrid } from "@mui/x-data-grid";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import { DataGrid } from "@mui/x-data-grid";
-
-// Data
-import rows from "./data/shipmentData.json";
 import columns from "layouts/shipment/Headers";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { setDataAction } from "store/shipment-actions";
 
 function Tables() {
+  const dispatch = useDispatch();
+  const rows = useSelector((state) => state.shipments);
+
+  useEffect(() => {
+    dispatch(setDataAction());
+  }, []);
+
   return (
     <DashboardLayout>
       <MDBox pt={6} pb={3}>
