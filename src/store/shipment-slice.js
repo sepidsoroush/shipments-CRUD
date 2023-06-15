@@ -10,7 +10,8 @@ const shipmentSlice = createSlice({
       state.shipments = action.payload.shipments;
     },
     deleteItem(state, action) {
-      state.shipments = state.shipments.filter((row) => row.orderNo !== action.payload.orderNo);
+      console.log(action.payload);
+      state.shipments = state.shipments.filter((row) => row.orderNo !== action.payload);
     },
     updateItem(state, action) {
       const { trackingNo, date, status, consignee, customer } = action.payload.shipment;
