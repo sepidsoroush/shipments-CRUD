@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { setDataAction } from "store/shipment-actions";
 import ShipmentDelete from "./ShipmentDelete";
+import ShipmentUpdate from "./ShipmentUpdate";
 
 function Tables() {
   const [selectedItem, setSelectedItem] = useState({});
@@ -41,9 +42,26 @@ function Tables() {
   const closeDeleteModal = () => {
     setOpenDeleteModal(false);
   };
+  const closeUpdateModal = () => {
+    setOpenUpdateModal(false);
+  };
 
   return (
     <DashboardLayout>
+      {openDeleteModal && (
+        <ShipmentDelete
+          onOpenModal={openDeleteModal}
+          onCloseModal={closeDeleteModal}
+          orderNo={selectedItem.orderNo}
+        />
+      )}
+      {openUpdateModal && (
+        <ShipmentUpdate
+          onOpenModal={openUpdateModal}
+          onCloseModal={closeUpdateModal}
+          shipment={selectedItem}
+        />
+      )}
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
           <Grid item xs={12}>
@@ -61,13 +79,6 @@ function Tables() {
                 <MDTypography variant="h6" color="white">
                   Shipments Table
                 </MDTypography>
-                {openDeleteModal && (
-                  <ShipmentDelete
-                    onOpenModal={openDeleteModal}
-                    onCloseModal={closeDeleteModal}
-                    orderNo={selectedItem.orderNo}
-                  />
-                )}
               </MDBox>
               <MDBox pt={3}>
                 <DataGrid

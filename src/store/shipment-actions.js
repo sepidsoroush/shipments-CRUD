@@ -15,6 +15,6 @@ export function deleteAction(orderNo) {
 
 export function updateAction(orderNo, shipment) {
   return (dispatch) => {
-    dispatch(shipmentActions.updateItem(orderNo, shipment));
+    dispatch(shipmentActions.updateItem({ orderNo, shipment }));
   };
 }
