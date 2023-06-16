@@ -22,7 +22,9 @@ const ShipmentDelete = ({ onOpenModal, onCloseModal, orderNo }) => {
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogTitle id="alert-dialog-title">Are you sure about deleteing this shipment?</DialogTitle>
+      <DialogTitle id="alert-dialog-title">
+        Are you certain about deleting this shipment?
+      </DialogTitle>
       <DialogActions>
         <Button onClick={handleDeleteShipment} style={{ color: "red" }}>
           Delete
