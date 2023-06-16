@@ -8,7 +8,7 @@ const ShipmentTable = ({ rows, deleteItemHandler, updateItemHandler }) => {
   const columns = [
     { field: "orderNo", headerName: "Order No", width: 220 },
     { field: "date", headerName: "Date", width: 100 },
-    { field: "customer", headerName: "Customer", width: 230 },
+    { field: "customer", headerName: "Customer", width: 220 },
     {
       field: "trackingNo",
       headerName: "Tracking no",
@@ -47,7 +47,7 @@ const ShipmentTable = ({ rows, deleteItemHandler, updateItemHandler }) => {
   ];
   return (
     <DataGrid
-      sx={{ fontSize: 13, overflowX: "scroll" }}
+      sx={{ fontSize: 13, overflowX: "scroll", overflowY: "hidden", maxHeight: 480 }}
       rows={rows}
       columns={columns}
       getRowId={(row) => row.orderNo}

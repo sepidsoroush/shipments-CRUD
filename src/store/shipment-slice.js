@@ -10,7 +10,6 @@ const shipmentSlice = createSlice({
       state.shipments = action.payload.shipments;
     },
     deleteItem(state, action) {
-      console.log(action.payload);
       state.shipments = state.shipments.filter((row) => row.orderNo !== action.payload);
     },
     updateItem(state, action) {
