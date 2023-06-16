@@ -17,4 +17,19 @@ This project is a react application that shows a list of shipments in a table. y
 - Open a Modal to visualize the **details** of each item (by clicking on a Button)
 - Ability to **update** information of each item (inside of Details Modal)
 
+## Screenshots of the project
+
+**Shipments Table:** 
+
+<img width="600" alt="Table" src="https://github.com/sepidsoroush/shipments-CRUD/assets/105380339/7b77403d-a26c-48c9-8058-0b8abbec5a20">
+
+
+**Delete Modal:** 
+
+<img width="600" alt="Delete" src="https://github.com/sepidsoroush/shipments-CRUD/assets/105380339/72119a0d-648f-4cb7-b6e9-596b80a6f1f6">
+
+
+**Detail Modal (and update feature):** 
+
+<img width="600" alt="Update" src="https://github.com/sepidsoroush/shipments-CRUD/assets/105380339/3d2348f5-b191-48b6-a711-5bc294cae324">
 
