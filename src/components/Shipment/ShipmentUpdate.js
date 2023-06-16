@@ -48,67 +48,65 @@ const ShipmentUpdate = ({ onOpenModal, onCloseModal, shipment }) => {
     >
       <DialogTitle id="alert-dialog-title">Shipment Information</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          <Box
-            sx={{
-              "& .MuiTextField-root": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <Box>
-              <TextField
-                disabled
-                id="standard-disabled"
-                label="Order No"
-                defaultValue={shipment.orderNo}
-                variant="standard"
-              />
+        <Box
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <Box>
+            <TextField
+              disabled
+              id="standard-disabled"
+              label="Order No"
+              defaultValue={shipment.orderNo}
+              variant="standard"
+            />
 
-              <TextField
-                id="standard-disabled"
-                label="Date"
-                defaultValue={shipment.date}
-                onChange={(event) => setDate(event.target.value)}
-                variant="standard"
-              />
-            </Box>
-            <Box>
-              <TextField
-                id="standard-disabled"
-                label="Consignee"
-                defaultValue={shipment.consignee}
-                onChange={(event) => setConsignee(event.target.value)}
-                variant="standard"
-              />
-
-              <TextField
-                id="standard-disabled"
-                label="Customer"
-                defaultValue={shipment.customer}
-                onChange={(event) => setCustomer(event.target.value)}
-                variant="standard"
-              />
-            </Box>
-            <Box>
-              <TextField
-                id="standard-disabled"
-                label="Tracking No"
-                defaultValue={shipment.trackingNo}
-                onChange={(event) => setTrackingNo(event.target.value)}
-                variant="standard"
-              />
-
-              <TextField
-                id="standard-disabled"
-                label="Status"
-                defaultValue={shipment.status}
-                onChange={(event) => setStatus(event.target.value)}
-                variant="standard"
-              />
-            </Box>
+            <TextField
+              id="standard-disabled"
+              label="Date"
+              defaultValue={shipment.date}
+              onChange={(event) => setDate(event.target.value)}
+              variant="standard"
+            />
           </Box>
-        </DialogContentText>
+          <Box>
+            <TextField
+              id="standard-disabled"
+              label="Consignee"
+              defaultValue={shipment.consignee}
+              onChange={(event) => setConsignee(event.target.value)}
+              variant="standard"
+            />
+
+            <TextField
+              id="standard-disabled"
+              label="Customer"
+              defaultValue={shipment.customer}
+              onChange={(event) => setCustomer(event.target.value)}
+              variant="standard"
+            />
+          </Box>
+          <Box>
+            <TextField
+              id="standard-disabled"
+              label="Tracking No"
+              defaultValue={shipment.trackingNo}
+              onChange={(event) => setTrackingNo(event.target.value)}
+              variant="standard"
+            />
+
+            <TextField
+              id="standard-disabled"
+              label="Status"
+              defaultValue={shipment.status}
+              onChange={(event) => setStatus(event.target.value)}
+              variant="standard"
+            />
+          </Box>
+        </Box>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleUpdateShipment} style={{ color: "green" }}>
