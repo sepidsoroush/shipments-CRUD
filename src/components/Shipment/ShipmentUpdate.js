@@ -56,7 +56,7 @@ const ShipmentUpdate = ({ onOpenModal, onCloseModal, shipment }) => {
             noValidate
             autoComplete="off"
           >
-            <div>
+            <Box>
               <TextField
                 disabled
                 id="standard-disabled"
@@ -72,8 +72,8 @@ const ShipmentUpdate = ({ onOpenModal, onCloseModal, shipment }) => {
                 onChange={(event) => setDate(event.target.value)}
                 variant="standard"
               />
-            </div>
-            <div>
+            </Box>
+            <Box>
               <TextField
                 id="standard-disabled"
                 label="Consignee"
@@ -89,8 +89,8 @@ const ShipmentUpdate = ({ onOpenModal, onCloseModal, shipment }) => {
                 onChange={(event) => setCustomer(event.target.value)}
                 variant="standard"
               />
-            </div>
-            <div>
+            </Box>
+            <Box>
               <TextField
                 id="standard-disabled"
                 label="Tracking No"
@@ -106,7 +106,7 @@ const ShipmentUpdate = ({ onOpenModal, onCloseModal, shipment }) => {
                 onChange={(event) => setStatus(event.target.value)}
                 variant="standard"
               />
-            </div>
+            </Box>
           </Box>
         </DialogContentText>
       </DialogContent>
