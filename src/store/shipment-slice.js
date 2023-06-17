@@ -4,6 +4,7 @@ const shipmentSlice = createSlice({
   name: "shipments",
   initialState: {
     shipments: [],
+    loading: false,
   },
   reducers: {
     setItems(state, action) {
@@ -20,6 +21,9 @@ const shipmentSlice = createSlice({
       existingItem.status = status;
       existingItem.consignee = consignee;
       existingItem.customer = customer;
+    },
+    setLoading(state, action) {
+      state.loading = action.payload;
     },
   },
 });

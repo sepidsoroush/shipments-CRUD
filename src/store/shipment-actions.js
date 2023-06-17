@@ -5,6 +5,7 @@ import shipmentData from "components/Shipment/data/shipmentData.json";
 
 export function setDataAction() {
   return (dispatch) => {
+    dispatch(shipmentActions.setLoading(true));
     axios
       .get(API_ENDPOINT)
       .then((response) => {
@@ -13,6 +14,9 @@ export function setDataAction() {
       .catch((error) => {
         console.log(error);
         dispatch(shipmentActions.setItems({ shipments: shipmentData })); //fallback
+      })
+      .finally(() => {
+        dispatch(shipmentActions.setLoading(false));
       });
   };
 }

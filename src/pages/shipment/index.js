@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setDataAction } from "store/shipment-actions";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import { CircularProgress } from "@mui/material";
 import MDBox from "components/UI/MDBox";
 import MDTypography from "components/UI/MDTypography";
 import DashboardLayout from "components/UI/DashboardLayout";
@@ -14,8 +15,10 @@ const Shipment = () => {
   const [selectedItem, setSelectedItem] = useState({});
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
+
   const dispatch = useDispatch();
   const rows = useSelector((state) => state.shipments);
+  const isLoading = useSelector((state) => state.loading);
 
   useEffect(() => {
     dispatch(setDataAction());
@@ -57,30 +60,34 @@ const Shipment = () => {
           />
         )}
       </Card>
-      <Grid item xs={12}>
-        <Card>
-          <MDBox
-            mx={2}
-            mt={-2}
-            py={1}
-            px={2}
-            variant="gradient"
-            bgColor="info"
-            borderRadius="lg"
-            coloredShadow="info"
-          >
-            <MDTypography variant="h6" color="white">
-              Shipments Table
-            </MDTypography>
-          </MDBox>
-          <MDBox pt={2}>
-            <ShipmentTable
-              rows={rows}
-              deleteItemHandler={deleteItemHandler}
-              updateItemHandler={updateItemHandler}
-            />
-          </MDBox>
-        </Card>
+      <Grid item xs={12} sx={{ textAlign: "center" }}>
+        {isLoading ? (
+          <CircularProgress color="info" />
+        ) : (
+          <Card>
+            <MDBox
+              mx={2}
+              mt={-2}
+              py={1}
+              px={2}
+              variant="gradient"
+              bgColor="info"
+              borderRadius="lg"
+              coloredShadow="info"
+            >
+              <MDTypography variant="h6" color="white">
+                Shipments Table
+              </MDTypography>
+            </MDBox>
+            <MDBox pt={2}>
+              <ShipmentTable
+                rows={rows}
+                deleteItemHandler={deleteItemHandler}
+                updateItemHandler={updateItemHandler}
+              />
+            </MDBox>
+          </Card>
+        )}
       </Grid>
     </DashboardLayout>
   );
