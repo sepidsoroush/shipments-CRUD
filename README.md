@@ -2,6 +2,8 @@
 
 This project is a react application that shows a list of shipments in a table. you can **Read**, **Update** and **Delete** items in this application.
 
+ 👉🏻 [Live Demo](https://shipments-crud.vercel.app/)
+
 
 ## Tech stack
 - [React](https://react.dev/) 
